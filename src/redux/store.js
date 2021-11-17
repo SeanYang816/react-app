@@ -5,6 +5,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import reducer from "./reducers"; //the rootReducer
 import rootSaga from "./sagas/"
 import randomUserReducer from './reducers/randomUserSlice'
+import memberReducer from './reducers/memberSlice'
 
 
 const sagaMiddleware = createSagaMiddleware();
@@ -13,6 +14,8 @@ const sagaMiddleware = createSagaMiddleware();
 const store = configureStore({
     reducer:{
         randomUser: randomUserReducer,
+        member: memberReducer,
+
     },
     middleware: [sagaMiddleware],
     middleware: (getdefaultMiddleware) => getdefaultMiddleware({thunk: false}).concat(sagaMiddleware),
