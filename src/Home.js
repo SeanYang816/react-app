@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import Login from './components/Login/Login'
+import Login from 'components/Login/Login'
 
 function Home({isLoggedIn}) {
     const navigate = useNavigate()

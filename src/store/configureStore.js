@@ -1,7 +1,7 @@
 
 // import { createStore, applyMiddleware, compose } from "redux";
 import { configureStore } from "@reduxjs/toolkit";
-import createReducer from "../reducers"
+import createReducer from "reducers"
 
 import { createLogger } from 'redux-logger'
 import { createInjectorsEnhancer } from "redux-injectors";

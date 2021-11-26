@@ -3,7 +3,7 @@ import {
     Outlet,
     useSearchParams
   } from "react-router-dom";
-  import { getInvoices } from "../data";
+  import { getInvoices } from "data";
   
   export default function Invoices() {
     let invoices = getInvoices();

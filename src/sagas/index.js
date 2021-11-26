@@ -1,5 +1,5 @@
 import { all, call, takeLatest, put, select } from "redux-saga/effects";
-import { requestRandomUser, requestRandomUserSuccess, requestRandomUserFailure } from '../reducers/randomUser'
+import { requestRandomUser, requestRandomUserSuccess, requestRandomUserFailure } from 'reducers/randomUser'
 
 function* generateRandomUser() {
     try {
