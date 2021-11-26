@@ -22,6 +22,7 @@ function App() {
       <BrowserRouter>
         <Navigation isLoggedIn={isLoggedIn}/>
         <Routes>
+          
           {/* before login  */}
           <Route path="/login/" element={<Login setIsLoggedIn={setIsLoggedIn}/>} />
           <Route path="/sign-up/" element={<SignUp isLoggedIn={isLoggedIn}/>} />

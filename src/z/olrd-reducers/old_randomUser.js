@@ -1,8 +1,5 @@
-import users from "./users"
-
 const initialState = {
-    thisIsnoLongerWorking: 'I dont work',
-    users: [123],
+    users: [],
     isLoading: false,
     hasError: false,
     pageNumber: 0,

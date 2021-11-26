@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import AButton from '../AButton/AButton'
 import {useDispatch, useSelector} from 'react-redux'
-import { addMember } from '../../redux/reducers/memberSlice'
+import { addMember } from '../../reducers/member'
 
 function SignUp() {
     const dispatch = useDispatch()
