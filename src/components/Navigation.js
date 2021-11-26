@@ -1,8 +1,7 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
 
-function Navigation(props) {
-  const { isLoggedIn } = props;
+function Navigation({isLoggedIn = false}) {
 
   return (
     <>

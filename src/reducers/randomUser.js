@@ -1,4 +1,5 @@
-import { createSlice, createAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+// import { createAction } from "@reduxjs/toolkit";
 
 const initialState = {
   users: [],
@@ -15,24 +16,25 @@ const randomUserSlice = createSlice({
   reducers: {
     requestRandomUser(state) {
       state.isLoading = true;
+      state.hasError = false;
     },
     requestRandomUserSuccess(state, action) {
       state.users.push(...action.payload);
       state.pageNumber++;
       state.isLoading = false;
+      state.hasError = false;
     },
     requestRandomUserFailure(state) {
       state.users = [];
       state.isLoading = false;
       state.hasError = true;
     },
-    removeUser(state, action){
-        state.users.splice(action.payload, 1)
-        state.pageNumber--
+    removeUser(state, action) {
+      state.users.splice(action.payload, 1)
     },
   },
 });
 
-export const { requestRandomUser, requestRandomUserSuccess, requestRandomUserFailure, removeUser} = randomUserSlice.actions;
+export const { requestRandomUser, requestRandomUserSuccess, requestRandomUserFailure, removeUser } = randomUserSlice.actions;
 
 export default randomUserSlice.reducer;

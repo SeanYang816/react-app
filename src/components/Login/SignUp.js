@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import AButton from '../AButton/AButton'
-import {useDispatch, useSelector} from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addMember } from '../../reducers/member'
 
 function SignUp() {
@@ -10,7 +9,7 @@ function SignUp() {
 
     const handleOnSubmit = (e) => {
         e.preventDefault()
-        dispatch(addMember([{username: username, password: password}]))
+        dispatch(addMember([{ username: username, password: password }]))
         setUsername('')
         setPassword('')
     }
@@ -18,15 +17,15 @@ function SignUp() {
     return (
         <div>
             <form onSubmit={handleOnSubmit}>
-                <label for="username">username</label>
-                <br/>
-                <input type="text" id="username" name="username" value={username} onChange={(e)=> setUsername(e.target.value)} />
-                <br/>
-                <label for="password" >password</label>
-                <br/>
-                <input type="password" id="password" name="password" value={password} onChange={(e)=> setPassword(e.target.value)}/>
-                <br/>
-                <br/>
+                <label htmlFor="username">username</label>
+                <br />
+                <input type="text" id="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} autoComplete />
+                <br />
+                <label htmlFor="password" >password</label>
+                <br />
+                <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} autoComplete />
+                <br />
+                <br />
                 <button type="submit">Submit</button>
             </form>
         </div>

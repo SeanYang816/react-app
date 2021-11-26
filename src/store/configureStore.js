@@ -2,7 +2,6 @@
 // import { createStore, applyMiddleware, compose } from "redux";
 import { configureStore } from "@reduxjs/toolkit";
 import createReducer from "../reducers"
-import rootSaga from "../sagas/"
 
 import { createLogger } from 'redux-logger'
 import { createInjectorsEnhancer } from "redux-injectors";
@@ -38,7 +37,7 @@ const store = configureStore({
 //   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 // )(createStore)(reducers);
 
-runSaga(rootSaga);
+// runSaga(rootSaga);
 
 export default store;
 

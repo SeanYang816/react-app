@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   requestRandomUser,
@@ -6,19 +6,25 @@ import {
 } from "../../reducers/randomUser";
 
 function ScrollGenerator() {
+  // useInjectSaga({ key: 'root', saga: rootSaga})
+
   const dispatch = useDispatch();
-  const randomUser = useSelector((state) => state.randomUser.users);
+  const users = useSelector((state) => state.randomUser.users);
   const isLoading = useSelector((state) => state.randomUser.isLoading);
   const hasError = useSelector((state) => state.randomUser.hasError);
   const refEl = useRef(null);
+  const [firstLoad, setFirstLoad] = useState(false)
 
-  const handleOnClick = (e) => {
-    dispatch(removeUser())
+  const handleRemoveUser = (e) => {
+    const { id } = e.currentTarget.dataset
+    dispatch(removeUser(id))
   }
-
   useEffect(() => {
-    dispatch(requestRandomUser());
-  }, []);
+    if (!firstLoad) {
+      dispatch(requestRandomUser())
+      setFirstLoad(true)
+    }
+  }, [firstLoad, dispatch]);
 
   useEffect(() => {
     if (refEl.current) {
@@ -28,12 +34,12 @@ function ScrollGenerator() {
           scrollTop,
           offsetHeight,
         } = e.target;
-        if (((scrollTop + offsetHeight) >= scrollHeight && !isLoading)){
+        if (((scrollTop + offsetHeight) >= scrollHeight && !isLoading)) {
           dispatch(requestRandomUser());
         }
       });
     }
-  }, []);
+  }, [isLoading, dispatch]);
 
   return (
     <div className="App">
@@ -41,14 +47,14 @@ function ScrollGenerator() {
         ref={refEl}
         style={{ height: "100vh", width: "100vw", overflow: "auto" }}
       >
-        {randomUser.map((user) => {
+        {users.map((user, index) => {
           const {
             name: { title, first, last },
             picture: { large },
             login: { uuid: asId },
           } = user;
           return (
-            <div key={asId} id={asId} onClick={handleOnClick}>
+            <div data-id={index} key={asId} id={asId} onClick={handleRemoveUser}>
               <img src={large} alt={`${title} ${first} ${last}`} />
             </div>
           );

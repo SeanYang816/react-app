@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, Link } from "react-router-dom";
 import styles from './App.module.scss';
-import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Home from "./Home";
 import ScrollGenerator from "./components/ScrollGenerator/ScrollGenerator";
@@ -11,12 +10,16 @@ import Login from "./components/Login/Login";
 import SignUp from "./components/Login/SignUp";
 import Logout from "./components/Login/Logout";
 import PageNotFuond from "./components/PageNotFound";
+import { useInjectSaga } from 'redux-injectors'
+import rootSaga from './sagas'
+
 function App() {
+  useInjectSaga({ key: 'root', saga: rootSaga})
   
-  const params = useParams();
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
     return (
+
       <div className={styles.app}>
       <h1>Bookkeeper</h1>
       <BrowserRouter>
