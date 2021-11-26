@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import styles from './App.module.scss';
+import styles from 'App.module.scss';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navigation from "./components/Navigation";
-import Home from "./Home";
-import ScrollGenerator from "./components/ScrollGenerator/ScrollGenerator";
-import Invoices from "./components/Invoices";
-import Invoice from "./components/Invoice";
-import Login from "./components/Login/Login";
-import SignUp from "./components/Login/SignUp";
-import Logout from "./components/Login/Logout";
-import PageNotFuond from "./components/PageNotFound";
+import Navigation from "components/Navigation";
+import Home from "Home";
+import ScrollGenerator from "components/ScrollGenerator/ScrollGenerator";
+import Invoices from "components/Invoices";
+import Invoice from "components/Invoice";
+import Login from "components/Login/Login";
+import SignUp from "components/Login/SignUp";
+import Logout from "components/Login/Logout";
+import PageNotFuond from "components/PageNotFound";
 import { useInjectSaga } from 'redux-injectors'
-import rootSaga from './sagas'
+import rootSaga from 'sagas'
 
 function App() {
   useInjectSaga({ key: 'root', saga: rootSaga})

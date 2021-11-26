@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { addMember } from '../../reducers/member'
+import { addMember } from 'reducers/member'
 
 function SignUp() {
     const dispatch = useDispatch()

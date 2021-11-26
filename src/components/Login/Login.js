@@ -1,5 +1,5 @@
 import React from "react";
-import AButton from "../AButton/AButton"
+import AButton from "components/AButton/AButton"
 
 function Login({isLoggedIn, setIsLoggedIn}) {
 
