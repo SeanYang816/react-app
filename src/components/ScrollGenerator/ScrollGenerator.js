@@ -13,18 +13,18 @@ function ScrollGenerator() {
   const isLoading = useSelector((state) => state.randomUser.isLoading);
   const hasError = useSelector((state) => state.randomUser.hasError);
   const refEl = useRef(null);
-  const [firstLoad, setFirstLoad] = useState(false)
+  const [hasLoaded, sethasLoaded] = useState(false)
 
   const handleRemoveUser = (e) => {
     const { id } = e.currentTarget.dataset
     dispatch(removeUser(id))
   }
   useEffect(() => {
-    if (!firstLoad) {
-      dispatch(requestRandomUser())
-      setFirstLoad(true)
+    if (!hasLoaded) {
+        dispatch(requestRandomUser())
+      sethasLoaded(true)
     }
-  }, [firstLoad, dispatch]);
+  }, [hasLoaded, dispatch]);
 
   useEffect(() => {
     if (refEl.current) {
