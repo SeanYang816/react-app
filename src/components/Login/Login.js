@@ -1,5 +1,6 @@
 import React from "react";
 import AButton from "components/AButton/AButton"
+import PropTypes from 'prop-types';
 
 function Login({isLoggedIn, setIsLoggedIn}) {
 
@@ -11,4 +12,9 @@ function Login({isLoggedIn, setIsLoggedIn}) {
   );
 }
 
-export default Login;
+Login.propTypes = {
+  isLoggedIn: PropTypes.bool,
+  setIsLoggedIn: PropTypes.any
+}
+
+export default Login

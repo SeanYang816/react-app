@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
 
@@ -29,3 +30,7 @@ function Navigation({isLoggedIn = false}) {
 }
 
 export default Navigation;
+
+Navigation.propTypes = {
+  isLoggedIn: PropTypes.bool
+}
