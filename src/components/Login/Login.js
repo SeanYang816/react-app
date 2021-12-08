@@ -1,6 +1,7 @@
 import React from "react";
 import AButton from "components/AButton/AButton"
 import Card from "components/Card/Card"
+import Pinning from "components/Pinning/Pinning"
 
 function Login({isLoggedIn, setIsLoggedIn}) {
 
@@ -13,6 +14,7 @@ function Login({isLoggedIn, setIsLoggedIn}) {
         <Card.Body></Card.Body>
         <Card.Footer></Card.Footer>
       </Card>
+      <Pinning />
     </div>
   );
 }
