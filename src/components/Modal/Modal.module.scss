@@ -1,0 +1,18 @@
+.wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    pointer-events: none;
+}
+
+.content {
+    background: white;
+    padding: 10px 20px;
+    border: 1px black solid;
+    border-radius: 20px;
+}
