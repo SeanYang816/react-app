@@ -10,6 +10,7 @@ import Login from "components/Login/Login";
 import SignUp from "components/Login/SignUp";
 import Logout from "components/Login/Logout";
 import PageNotFuond from "components/PageNotFound";
+import Parent from "components/ImperativeHandle/Parent";
 import { useInjectSaga } from 'redux-injectors'
 import rootSaga from 'sagas'
 
@@ -29,6 +30,7 @@ function App() {
           {/* before login  */}
           <Route path="/login/" element={<Login setIsLoggedIn={setIsLoggedIn}/>} />
           <Route path="/sign-up/" element={<SignUp isLoggedIn={isLoggedIn}/>} />
+          <Route path="/parent/" element={<Parent />} />
 
           {/* after login */}
           {isLoggedIn && 
