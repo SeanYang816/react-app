@@ -12,7 +12,7 @@ function Navigation({isLoggedIn = false}) {
         }}
       >
         {!isLoggedIn && <>
-        <Link to="/login">Login</Link> | <Link to="/sign-up">Sign up</Link> |{" "}<Link to="/parent">Parent</Link>
+        <Link to="/login">Login</Link> | <Link to="/sign-up">Sign up</Link> |{" "}<Link to="/parent">Parent</Link>|{" "}<Link to="/MUI">MUI</Link>
         </>}
         {isLoggedIn && (
           <>

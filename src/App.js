@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import {ThemeContext} from './index'
 import styles from 'App.module.scss';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "components/Navigation";
@@ -11,18 +12,20 @@ import SignUp from "components/Login/SignUp";
 import Logout from "components/Login/Logout";
 import PageNotFuond from "components/PageNotFound";
 import Parent from "components/ImperativeHandle/Parent";
+import MUI from "MUI/MUI";
 import { useInjectSaga } from 'redux-injectors'
 import rootSaga from 'sagas'
 
 function App() {
   useInjectSaga({ key: 'root', saga: rootSaga})
-  
+  const theme = useContext(ThemeContext)
+  console.log(theme)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
     return (
 
       <div className={styles.app}>
-      <h1>Bookkeeper</h1>
+      <h1 style={theme.light}>Bookkeeper</h1>
       <BrowserRouter>
         <Navigation isLoggedIn={isLoggedIn}/>
         <Routes>
@@ -31,6 +34,7 @@ function App() {
           <Route path="/login/" element={<Login setIsLoggedIn={setIsLoggedIn}/>} />
           <Route path="/sign-up/" element={<SignUp isLoggedIn={isLoggedIn}/>} />
           <Route path="/parent/" element={<Parent />} />
+          <Route path="/mui/" element={<MUI />} />
 
           {/* after login */}
           {isLoggedIn && 
