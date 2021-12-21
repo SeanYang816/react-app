@@ -12,7 +12,6 @@ import SignUp from "components/Login/SignUp";
 import Logout from "components/Login/Logout";
 import PageNotFuond from "components/PageNotFound";
 import Parent from "components/ImperativeHandle/Parent";
-import MUI from "MUI";
 import { useInjectSaga } from 'redux-injectors'
 import rootSaga from 'sagas'
 
@@ -34,7 +33,6 @@ function App() {
           <Route path="/login/" element={<Login setIsLoggedIn={setIsLoggedIn}/>} />
           <Route path="/sign-up/" element={<SignUp isLoggedIn={isLoggedIn}/>} />
           <Route path="/parent/" element={<Parent />} />
-          <Route path="/mui/" element={<MUI />} />
 
           {/* after login */}
           {isLoggedIn && 
