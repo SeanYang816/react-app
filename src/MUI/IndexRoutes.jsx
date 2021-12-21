@@ -1,6 +1,8 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
 import HomePage from './HomePage/HomePage'
+import Login from './LoginPage/Login'
+import SignIn from './LoginPage/SignIn'
 import Test from './Test/Parent'
 import Parent from './Test/Parent'
 import Child from './Test/Child'
@@ -13,6 +15,8 @@ function IndexRoutes() {
       <Routes>
         <Route>
           <Route index element={<HomePage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signin" element={<SignIn />} />
           <Route path="/profile" element={<Test />} />
           <Route path="/account" element={<Test />} />
           <Route path="/logout" element={<Test />} />

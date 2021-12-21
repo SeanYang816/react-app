@@ -29,9 +29,6 @@ function Header() {
     <>
       <AppBar position="fixed" sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}>
         <Toolbar sx={{display: 'flex', justifyContent: 'flex-end'}}>
-          {/* <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <MenuButton />
-          </Box> */}
           <Box>
             <Button
               id="basic-button"
@@ -45,6 +42,7 @@ function Header() {
                 <AccountCircleIcon sx={{ width: '50px', height: '50px' }} />
               </Avatar>
             </Button>
+            {/* Button Clicked */}
             <Menu
               id="basic-menu"
               anchorEl={anchorEl}
@@ -58,6 +56,8 @@ function Header() {
               <Link to="/account"><MenuItem onClick={handleClose}>My account</MenuItem></Link>
               <Link to="/logout"><MenuItem onClick={handleClose}>Logout</MenuItem></Link>
             </Menu>
+            {/* Button Clicked */}
+
           </Box>
         </Toolbar>
         <Sidebar
